@@ -6,7 +6,7 @@
       <env name="PYTHONUNBUFFERED" value="1" />
     </envs>
     <option name="SDK_HOME" value="C:\Users\Yves\Anaconda3\python.exe" />
-    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/1a/code" />
+    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/4a/code" />
     <option name="IS_MODULE_SDK" value="false" />
     <option name="ADD_CONTENT_ROOTS" value="true" />
     <option name="ADD_SOURCE_ROOTS" value="true" />
