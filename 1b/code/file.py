@@ -26,5 +26,5 @@ def convert_value_to_number_if_possible(value):
     return value
 
 
-def convert_array_to_number_array_if_possible(input):
-    return list(map(convert_value_to_number_if_possible, input))
+def convert_array_to_number_array_if_possible(val_in):
+    return list(map(convert_value_to_number_if_possible, val_in))

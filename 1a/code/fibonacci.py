@@ -10,6 +10,7 @@ def fib(n):
         return fib(n - 1) + fib(n - 2)
 
 
+# noinspection PyUnresolvedReferences
 def fib_count(n):
     if n < 2:
         return [n, 1]
@@ -32,7 +33,7 @@ def fib_time(n):
     return [fib_result, time_diff]
 
 
-def fib_fast_recursive(n, a = 1, b = 1):
+def fib_fast_recursive(n, a=1, b=1):
     n -= 1
 
     if n <= 0:

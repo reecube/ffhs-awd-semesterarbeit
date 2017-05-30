@@ -2,7 +2,8 @@
 
 ##########
 # 
-# Erstellen Sie eine Beispielsammlung von verschiedenen Arten von Graphiken mit Matplotlib; es sollte je ein Beispiel der folgenden Diagrammtypen berücksichtigt werden:
+# Erstellen Sie eine Beispielsammlung von verschiedenen Arten von Graphiken mit Matplotlib;
+#   es sollte je ein Beispiel der folgenden Diagrammtypen berücksichtigt werden:
 # 
 # Funktionsgraphen, 
 # Mehrere Funktionsgraphen in der selben Graphik

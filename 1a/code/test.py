@@ -52,8 +52,6 @@ for i in range(1, 20 + 1):
 print('')
 print('[INFO] `fibonacci.fib_count`' + str(countResults))
 
-# TODO: Supply this with a graph
-
 
 ######################################################
 # Aufgabe 3                                          #

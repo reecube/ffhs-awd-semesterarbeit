@@ -3,11 +3,14 @@
 # Aufgabenstellung
 #
 # Um eine moeglichst glatte Kurve durch eine bestimmte Anzahl von Punkten zu zeichnen, koennen Splints verwendet werden.
-# Splints sind Kurvenstuecke aus kubischen Kurven, die so "zusammengeklebt" werden, dass an den Klebestellen die ersten beiden Ableitungen uebereinstimmen.
+# Splints sind Kurvenstuecke aus kubischen Kurven, die so "zusammengeklebt" werden,
+#   dass an den Klebestellen die ersten beiden Ableitungen uebereinstimmen.
 #
-# Lesen Sie zuerst http://docs.scipy.org/doc/scipy/reference/tutorial/interpolate.html (nur bis zum Abschnitt ueber eindimensionale Splines).
+# Lesen Sie zuerst http://docs.scipy.org/doc/scipy/reference/tutorial/interpolate.html
+#   (nur bis zum Abschnitt ueber eindimensionale Splines).
 #
-# Approximieren Sie eine Kurve mit Splines. Zeichnen Sie die Stuetzpunkte, die Splines und die exakte Kurve in einer Graphik mit Matplotlib.
+# Approximieren Sie eine Kurve mit Splines. Zeichnen Sie die Stuetzpunkte,
+#   die Splines und die exakte Kurve in einer Graphik mit Matplotlib.
 # Splines koennen mit https://docs.scipy.org/doc/scipy/reference/tutorial/interpolate.html erstellt werden.
 #
 ##################################################

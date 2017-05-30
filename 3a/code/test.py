@@ -3,7 +3,8 @@
 # Aufgabenstellung
 #
 # Implementieren Sie das Newton-Verfahren zur Bestimmung von Nullstellen von Funktionen.
-# (Dabei soll die Funktion als Sympy-Objekt eingegeben werden, so dass Sie mit Sympy die Ableitung davon bestimmen koennen.)
+# (Dabei soll die Funktion als Sympy-Objekt eingegeben werden,
+#   so dass Sie mit Sympy die Ableitung davon bestimmen koennen.)
 #
 # Newtonverfahren und Taylorentwicklung
 # 1. Mit Hilfe des Newtonverfahrens bestimme man ausgehend von x0 = 1

@@ -2,7 +2,6 @@
 
 import numpy as np
 
-
 CSV_SEPERATOR = ';'
 
 
@@ -29,10 +28,11 @@ def convert_value_to_number_if_possible(value):
     return value
 
 
-def convert_array_to_number_array_if_possible(input):
-    return list(map(convert_value_to_number_if_possible, input))
+def convert_array_to_number_array_if_possible(val_in):
+    return list(map(convert_value_to_number_if_possible, val_in))
 
-def convert_table_data_to_numpy_column_data_array(data_table, remove_head_row = True):
+
+def convert_table_data_to_numpy_column_data_array(data_table, remove_head_row=True):
     if remove_head_row:
         data_table = data_table[1:]
 
