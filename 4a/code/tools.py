@@ -12,7 +12,7 @@ def factor(n):
         return n * factor(n - 1)
 
 
-# Berechnet die Taylor-Polynome1
+# Berechnet die Taylor-Polynome
 #   fnc:  Ist die Funktion für das Taylor-Polynom
 #   x0:   Ist der Startwert
 #   n:    Ist der Grad für das Taylor-Polynom
@@ -20,9 +20,11 @@ def taylor_series(fnc, x0, n):
     # Standardwert und Startwert für p ist 0
     p = 0
 
+    # Die Taylor-Polynome basieren auf der Summenformel von i=0 bis i=n, dafür wird ein for-Loop verwendet
     for i in range(0, n + 1):
-        print('for  ', i, p)
-        p = p + (fnc.diff(x, i).subs(x, x0)) / (factor(i)) * (x - x0) ** i
+        # Hierbei andelt es sich um die Taylor-Polynom-Formel:
+        # (i-te x-Ableitung von fnc, berechnet mit x=x0) geteilt durch (die Fakultät von i) multipliziert mit (x hoch i)
+        p += (fnc.diff(x, i).subs(x, x0)) / (factor(i)) * (x - x0) ** i
 
     # Nun wird p zurückgegeben, falls n >= 0 wird p eine Funktion sein
     return p
