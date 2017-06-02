@@ -62,13 +62,23 @@ def show_imagemap(lam_fnc, vcount):
 
 
 def show_surface(lam_fnc, vmin, vmax, vstep):
+    # Erstelle eine neue Figur um daraus ein 3d-Objekt zu erstellen
     fig = plt.figure()
+
+    # Erstelle ein 3d-Projekt aus der Figur
     ax = fig.add_subplot(111, projection='3d')
+
+    # Fülle die Listen mit Werten
     val_x = val_y = np.arange(vmin, vmax, vstep)
+
+    # Generiere die Grids aus den Werten
     val_big_x, val_big_y = np.meshgrid(val_x, val_y)
+
+    # Generiere die Z-Achse
     zs = np.array([lam_fnc(val_x, val_y) for val_x, val_y in zip(np.ravel(val_big_x), np.ravel(val_big_y))])
     val_big_z = zs.reshape(val_big_x.shape)
 
+    # Zeige die Fläche mit den Werten an
     ax.plot_surface(val_big_x, val_big_y, val_big_z)
 
     ax.set_xlabel('X Achse')
