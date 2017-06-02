@@ -33,9 +33,9 @@ def show_taylor_graph(fnc, depth, grid_min, grid_max):
     x1 = np.linspace(x_lims[0], x_lims[1], 800)
     y1 = []
 
-    #
     print('')
     print('berechnen...')
+    # Berechnet ein Taylor-Polynom für jeden Grad
     for n in range(1, depth + 1, 1):
         func = tools.taylor_series(fnc, 0, n)
 
