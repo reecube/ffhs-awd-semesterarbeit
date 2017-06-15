@@ -1,3 +1,34 @@
+import sympy
+from sympy.parsing.sympy_parser import parse_expr
+from sympy import lambdify
+
+
+def read_user_function():
+    x = sympy.Symbol('x')
+
+    while True:
+        try:
+            user_input = input('Bitte geben Sie eine gültige X-Funktion an: ')
+
+            expr = parse_expr(user_input, evaluate=False)
+
+            return lambdify(x, expr, modules=['numpy'])
+        except SyntaxError:
+            print('Ihre Eingabe ist ungültig! Bitte versuchen Sie es erneut oder beenden Sie das Programm.')
+            continue
+
+
+def read_user_number(msg):
+    while True:
+        try:
+            user_input = input(msg)
+
+            return int(user_input)
+        except ValueError:
+            print('Ihre Eingabe ist ungültig! Bitte versuchen Sie es erneut oder beenden Sie das Programm.')
+            continue
+
+
 def trapeze(fnc, start_x, end_x, n):
     result = 0
 
@@ -15,28 +46,6 @@ def trapeze(fnc, start_x, end_x, n):
         xi = xii
 
     return result
-
-
-# def simpson(fnc, start_x, end_x, n):
-#     h = (end_x - start_x) / n
-#
-#     k = 0.0
-#
-#     x = start_x + h
-#
-#     range_max = int(round(n / 2))
-#
-#     for i in range(1, range_max + 1):
-#         k += 4 * fnc(x)
-#         x += 2 * h
-#
-#     x = start_x + 2 * h
-#
-#     for i in range(1, range_max):
-#         k += 2 * fnc(x)
-#         x += 2 * h
-#
-#     return (h / 3) * (fnc(start_x) + fnc(end_x) + k)
 
 
 def simpson(fnc, start_x, end_x, n):
