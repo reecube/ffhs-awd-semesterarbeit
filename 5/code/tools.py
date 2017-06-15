@@ -1,3 +1,4 @@
+# Verwendete Bibliotheken importieren
 import sympy
 import numpy
 from sympy.parsing.sympy_parser import parse_expr
@@ -5,6 +6,7 @@ from sympy import lambdify
 from scipy.integrate import quad
 
 
+# Frage den Benutzer für eine Funktion mit x-Parameter
 def read_user_function():
     x = sympy.Symbol('x')
 
@@ -20,6 +22,7 @@ def read_user_function():
             continue
 
 
+# Frage den Benutzer für eine Zahl
 def read_user_number(msg):
     while True:
         try:
@@ -31,6 +34,8 @@ def read_user_number(msg):
             continue
 
 
+# Berechne den Flächeninhalt zwischen Funktion fnc und der x-Achse zwischen start_x und end_x
+#    auf die Genauigkeit n (je grösser desto genauer) mit der Trapezregel
 def trapeze(fnc, start_x, end_x, n):
     result = 0
 
@@ -50,6 +55,8 @@ def trapeze(fnc, start_x, end_x, n):
     return result
 
 
+# Berechne den Flächeninhalt zwischen Funktion fnc und der x-Achse zwischen start_x und end_x
+#    auf die Genauigkeit n (je grösser desto genauer) mit der Simpsonsche Regel
 def simpson(fnc, start_x, end_x, n):
     result = fnc(start_x)
 
@@ -73,14 +80,20 @@ def simpson(fnc, start_x, end_x, n):
     return result
 
 
+# Berechne das Volumen eines Torus mit r und R als Parameter
+# Diese Funktion verwendet den Integral-Ansatz
 def volume_torus_integral(r_lower, r_upper):
     def fnc(x):
         return sympy.sqrt(r_lower ** 2 - x ** 2)
 
+    # Integral von fnc zwischen `-r` und `r`
     ans, err = quad(fnc, 0 - r_lower, r_lower)
 
     return 4.0 * numpy.pi * r_upper * ans
 
 
+# Berechne das Volumen eines Torus mit r und R als Parameter
+# Diese Funktion verwendet den einfachen mathematischen Ansatz ohne Integral
+#    => gemäss Aufgabenstellung: von Hand
 def volume_torus_simple(r_lower, r_upper):
     return 2 * (numpy.pi ** 2) * r_upper * (r_lower ** 2)

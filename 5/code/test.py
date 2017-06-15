@@ -17,6 +17,8 @@
 
 import view
 
+# Berechne das Torus-Volumen und zeige das Resultat an
 view.showTorusVolume(5, 20)
 
+# Frage den Benutzer nach einer Funktion und stelle entsprechende Berechnungen an
 view.showSurface()
