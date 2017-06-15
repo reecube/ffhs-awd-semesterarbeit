@@ -14,6 +14,9 @@ def read_user_function():
         try:
             user_input = input('Bitte geben Sie eine gültige X-Funktion an: ')
 
+            if user_input == '':
+                continue
+
             expr = parse_expr(user_input, evaluate=False)
 
             return lambdify(x, expr, modules=['numpy'])
