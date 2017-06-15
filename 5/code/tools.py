@@ -53,16 +53,16 @@ def simpson(fnc, start_x, end_x, n):
 
     delta_x = (end_x - start_x) / n
 
-    range_max = end_x - delta_x
+    last_x_value = end_x - delta_x
 
     x = start_x + delta_x
 
-    while x < range_max:
+    while x < last_x_value:
         result += 4 * fnc(x)
         result += 2 * fnc(x + delta_x)
         x += 2 * delta_x
 
-    result += 4 * fnc(range_max)
+    result += 4 * fnc(last_x_value)
 
     result += fnc(end_x)
 
