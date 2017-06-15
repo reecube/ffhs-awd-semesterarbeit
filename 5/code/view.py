@@ -1,7 +1,7 @@
 import tools
 
 
-def show(fnc=None, start_x=None, end_x=None, n=None):
+def showSurface(fnc=None, start_x=None, end_x=None, n=None):
     if fnc is None:
         fnc = tools.read_user_function()
 
@@ -31,4 +31,18 @@ def show(fnc=None, start_x=None, end_x=None, n=None):
 
     print('Differenz (Approximation) zwischen den beiden Regeln: ')
     print(val_diff)
+    print('')
+
+
+def showTorusVolume(r_lower, r_upper):
+    v_simple = tools.volume_torus_simple(r_lower, r_upper)
+    v_integral = tools.volume_torus_integral(r_lower, r_upper)
+    v_diff = abs(v_simple - v_integral)
+
+    print('')
+    print('Berechnetes Volumen für einen Torus mit r=`' + str(r_lower) + '` und R=`' + str(r_upper) + '`: ')
+    print('- Einfache Berechnung:          `' + str(v_simple) + '`')
+    print('- Integrale Berechnung:         `' + str(v_integral) + '`')
+    print('- Differenz (Approximation):    `' + str(v_diff) + '`')
+    print('')
     print('')

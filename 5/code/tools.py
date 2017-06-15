@@ -1,6 +1,8 @@
 import sympy
+import numpy
 from sympy.parsing.sympy_parser import parse_expr
 from sympy import lambdify
+from scipy.integrate import quad
 
 
 def read_user_function():
@@ -69,3 +71,16 @@ def simpson(fnc, start_x, end_x, n):
     result *= delta_x / 3
 
     return result
+
+
+def volume_torus_integral(r_lower, r_upper):
+    def fnc(x):
+        return sympy.sqrt(r_lower ** 2 - x ** 2)
+
+    ans, err = quad(fnc, 0 - r_lower, r_lower)
+
+    return 4.0 * numpy.pi * r_upper * ans
+
+
+def volume_torus_simple(r_lower, r_upper):
+    return 2 * (numpy.pi ** 2) * r_upper * (r_lower ** 2)

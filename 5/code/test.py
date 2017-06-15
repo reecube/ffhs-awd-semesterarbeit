@@ -15,7 +15,8 @@
 #
 ##################################################
 
-import tools
-import calc
+import view
 
-calc.show()
+view.showTorusVolume(5, 20)
+
+view.showSurface()
